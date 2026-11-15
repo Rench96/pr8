@@ -11,10 +11,10 @@ int chitat(int *znach)
 
 size_t zadatRazmer(size_t n)
 {
-    int razmer;
+    int razm;
     printf("Введите размер массива (от 1 до %d): ", RAZMER);
-    if (chitat(&razmer) == 1 && razmer >= 1 && razmer <= RAZMER)
-        return razmer;
+    if (chitat(&razm) == 1 && razm >= 1 && razm <= RAZMER)
+        return razm;
     printf("Ошибка: неверный размер\n");
     return n;
 }
@@ -54,7 +54,7 @@ void pokazat(int *arrptr, size_t n)
         printf("[%zu] значение %d, адрес %p\n", i, *(arrptr + i), arrptr + i);
 }
 
-int maksDiapazon(int *arrptr, size_t n, int k, int m, int *rez)
+int maxDiapazon(int *arrptr, size_t n, int k, int m, int *rez)
 {
     int i;
     if (k < 0 || k > m || m >= (int)n)
@@ -70,12 +70,12 @@ int maksDiapazon(int *arrptr, size_t n, int k, int m, int *rez)
 
 int srednDiapazon(int *arrptr, size_t n, int k, int m, double *rez)
 {
-    int i, summa = 0;
+    int i, summ = 0;
     if (k < 0 || k > m || m >= (int)n)
         return 0;
     for (i = k; i <= m; i++)
-        summa = summa + *(arrptr + i);
-    *rez = (double)summa / (m - k + 1);
+        summ = summ + *(arrptr + i);
+    *rez = (double)summ / (m - k + 1);
     return 1;
 }
 

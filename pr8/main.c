@@ -5,8 +5,8 @@ int main(void)
     int massiv[RAZMER] = {0};
     size_t n = 0;
     char punkt = 0;
-    int rez, simvol, k, m, maks;
-    double srednee;
+    int rez, simvol, k, m, max;
+    double sred;
 
     while (punkt != 'g')
     {
@@ -44,8 +44,8 @@ int main(void)
             printf("Введите m: ");
             if (chitat(&m) != 1)
                 break;
-            if (maksDiapazon(massiv, n, k, m, &maks))
-                printf("Максимум: %d\n", maks);
+            if (maxDiapazon(massiv, n, k, m, &max))
+                printf("Максимум: %d\n", max);
             else
                 printf("Ошибка: неверный диапазон\n");
             break;
@@ -56,8 +56,8 @@ int main(void)
             printf("Введите m: ");
             if (chitat(&m) != 1)
                 break;
-            if (srednDiapazon(massiv, n, k, m, &srednee))
-                printf("Среднее: %.2f\n", srednee);
+            if (srednDiapazon(massiv, n, k, m, &sred))
+                printf("Среднее: %.2f\n", sred);
             else
                 printf("Ошибка: неверный диапазон\n");
             break;
