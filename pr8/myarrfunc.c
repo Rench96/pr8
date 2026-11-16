@@ -59,11 +59,11 @@ int maxDiapazon(int *arrptr, size_t n, int k, int m, int *rez)
     int i;
     if (k < 0 || k > m || m >= (int)n)
         return 0;
-    *rez = *(arrptr + k);
+    *rez = arrptr[k];
     for (i = k + 1; i <= m; i++)
     {
-        if (*(arrptr + i) > *rez)
-            *rez = *(arrptr + i);
+        if (arrptr[i] > *rez)
+            *rez = arrptr[i];
     }
     return 1;
 }
@@ -74,7 +74,7 @@ int srednDiapazon(int *arrptr, size_t n, int k, int m, double *rez)
     if (k < 0 || k > m || m >= (int)n)
         return 0;
     for (i = k; i <= m; i++)
-        summ = summ + *(arrptr + i);
+        summ = summ + arrptr[i];
     *rez = (double)summ / (m - k + 1);
     return 1;
 }
@@ -84,7 +84,7 @@ size_t kolBolshe(int *arrptr, size_t n, int k)
     size_t i, kol = 0;
     for (i = 0; i < n; i++)
     {
-        if (*(arrptr + i) > k)
+        if (arrptr[i] > k)
             kol++;
     }
     return kol;
