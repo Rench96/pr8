@@ -31,13 +31,13 @@ void zapolnit(int massiv[], size_t n)
     for (i = 0; i < n; i++)
     {
         printf("Элемент %zu: ", i);
-        rez = chitat(massiv + i);
+        rez = chitat(&massiv[i]);
         while (rez != 1)
         {
             if (rez == EOF)
                 return;
             printf("Ошибка, введите целое число: ");
-            rez = chitat(massiv + i);
+            rez = chitat(&massiv[i]);
         }
     }
 }
@@ -51,7 +51,7 @@ void pokazat(int massiv[], size_t n)
         return;
     }
     for (i = 0; i < n; i++)
-        printf("[%zu] значение %d, адрес %p\n", i, massiv[i], massiv + i);
+        printf("[%zu] значение %d, адрес %p\n", i, massiv[i], &massiv[i]);
 }
 
 int maxDiapazon(int massiv[], size_t n, int k, int m, int *rez)
