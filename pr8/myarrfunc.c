@@ -51,7 +51,7 @@ void pokazat(int *arrptr, size_t n)
         return;
     }
     for (i = 0; i < n; i++)
-        printf("[%zu] значение %d, адрес %p\n", i, *(arrptr + i), arrptr + i);
+        printf("[%zu] значение %d, адрес %p\n", i, arrptr[i], arrptr + i);
 }
 
 int maxDiapazon(int *arrptr, size_t n, int k, int m, int *rez)
